@@ -1,0 +1,118 @@
+<!--
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+             <h3 class="text-muted">meanstack</h3>
+        </div>
+ -->
+<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" ui-sref="main"><i class="fa fa-th-large"></i> Test Site</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+
+			<li class="dropdown active">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-spinner fa-spin"></i> My Area <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li class="dropdown-header">Status</li>
+					<li ng-class="{ active: $state.includes('mylevel') }">
+						<a ui-sref="mylevel"><i class="fa fa-eye"></i> My Level: 평민</a>
+					</li>
+					<li ng-class="{ active: $state.includes('myqna')}">
+						<a ui-sref="myqna"><i class="fa fa-comments"></i> 질문: 3, 답변: 1</a>
+					</li>
+
+					<li class="divider"></li>
+					<li class="dropdown-header">Following</li>
+					<li data-ng-class="{ active: $state.includes('myfollowing') && $stateParams.userId == '1' }">
+						<a ui-sref="myfollowing({userId:'1'})"><i class="fa fa-thumb-tack"></i> 홍길동</a>
+					</li>
+					<li data-ng-class="{ active: $state.includes('myfollowing') && $stateParams.userId == '2' }">
+						<a ui-sref="myfollowing({userId:'2'})"><i class="fa fa-thumb-tack"></i> 김길동</a>
+					</li>
+					<li data-ng-class="{ active: $state.includes('myfollowing') && $stateParams.userId == '3' }">
+						<a ui-sref="myfollowing({userId:'3'})"><i class="fa fa-thumb-tack"></i> 이순신</a>
+					</li>
+
+					<li>
+						<a href="#About"> About</a>
+						<a href="#contact"> contact</a>
+						<a href="#"> 벤지</a>
+					</li>
+				</ul>
+			</li>
+
+
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown"> Tech Area <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li class="dropdown-header">SPA</li>
+					<li data-ng-class="{ active: $state.includes('techarea') && $stateParams.techId == '1' }">
+						<a ui-sref="techarea({techId:'1'})"><i class="fa fa-file-text-o"></i> Angular.js</a>
+					</li>
+
+					<li class="divider"></li>
+					<li class="dropdown-header">Middleware</li>
+					<li data-ng-class="{ active: $state.includes('techarea') && $stateParams.techId == '2' }">
+						<a ui-sref="techarea({techId:'2'})"><i class="fa fa-file-text-o"></i> Node.js</a>
+					</li>
+					<li data-ng-class="{ active: $state.includes('techarea') && $stateParams.techId == '3' }">
+						<a ui-sref="techarea({techId:'3'})"><i class="fa fa-file-text-o"></i> Express.js</a>
+					</li>
+
+					<li class="divider"></li>
+					<li class="dropdown-header">NoSQL</li>
+					<li data-ng-class="{ active: $state.includes('techarea') && $stateParams.techId == '4' }">
+						<a ui-sref="techarea({techId:'4'})"><i class="fa fa-file-text-o"></i> MongoDB</a>
+					</li>
+
+					<li class="divider"></li>
+					<li class="dropdown-header">Eco Tools</li>
+					<li data-ng-class="{ active: $state.includes('techarea') && $stateParams.techId == '5' }">
+						<a ui-sref="techarea({techId:'5'})"><i class="fa fa-file-text-o"></i> Yeoman</a>
+					</li>
+				</ul>
+			</li>
+
+
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown"> GuruGuru <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li class="dropdown-header">Ranking</li>
+					<li data-ng-class="{ active: $state.includes('gururanking') }">
+						<a ui-sref="gururanking"><i class="fa fa-sitemap"></i> 명예의 전당</a>
+					</li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Members</li>
+					<li data-ng-class="{ active: $state.includes('gurumember') }">
+						<a ui-sref="gurumember"><i class="fa fa-users "></i> 멤버소개</a>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li ng-hide="false">
+				<a href="#" ui-sref="login">Login</a>
+			</li>
+			<li ng-show="false">
+				<a href="#" ng-click="logout()">
+					[{{ currentUser.name }}] Logout
+				</a>
+			</li>
+		</ul>
+
+	</div>
+</div>
